@@ -23,6 +23,7 @@ async function apiPerformance() {
   return res.json();
 }
 async function apiHealth() {
+  console.log(API_BASE)
   try { const r = await fetch(`${API_BASE}/health`); return r.ok; } catch { return false; }
 }
 
@@ -117,6 +118,7 @@ const ShapBar = ({ feature, shap_value, raw_value }) => {
 
 // ── Fleet Overview ────────────────────────────────────────────────────────────
 function FleetOverview({ fleet, loading, error, onSelect }) {
+  console.log('tes')
   if(loading) return <div style={{display:"flex",gap:10,alignItems:"center",color:C.textSub,padding:40}}><Spinner/> Loading fleet predictions from real model…</div>;
   if(error)   return <ErrorBox msg={error}/>;
   if(!fleet.length) return <div style={{color:C.textSub,padding:40,textAlign:"center"}}>No fleet data</div>;
