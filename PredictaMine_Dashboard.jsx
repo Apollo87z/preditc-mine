@@ -6,9 +6,7 @@
  */
 import { useState, useEffect } from "react";
 
-const API_BASE =
-  (typeof process !== "undefined" && process.env?.REACT_APP_API_URL) ||
-  "http://localhost:5001";
+const API_BASE ="https://predictminebackned-production.up.railway.app";
 
 // ── API helpers ───────────────────────────────────────────────────────────────
 async function apiPredict(inputs) {
